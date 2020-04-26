@@ -1,7 +1,7 @@
 EX_1
 
 function removefirst(arr, index){
-  if(arr[index+1] === undefined){
+  if(index==arr.length-1){
     arr.pop();
     return arr;
   }
@@ -65,13 +65,12 @@ movechar(["a","b","c","d","e","f","g","h"], 3);
 
 EX_5
 
-function treeCreator(arr, tree, index, count) {  
+function treeCreator(arr, tree, index, count=0) {  
   if (index == arr.length){
     return tree;
   }
   if (arr[index].parent === null){
     tree[arr[index].id] = {};
-    count = [arr[index].id];
     return treeCreator(arr, tree, index + 1, count);
   }
   if (tree[arr[index].parent]){
